@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-// import Item from './compontents/Item';
+import Item from './compontents/Item';
 
 function App() {
   // Inputに渡された値を収納するステート
@@ -31,7 +31,7 @@ function App() {
               {shopItems.map((item, i) => {
                 return(
                 <div key={i} className="item-row">
-                  <li>{item.itemName} {item.quantity}</li>
+                  <li><Item itemName={item.itemName} quantity={item.quantity} /></li>
                 </div>
                 )
               })}
