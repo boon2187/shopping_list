@@ -6,7 +6,7 @@ function App() {
   // Inputに渡された値を収納するステート
   // const [value, setValue] = useState("");
   // 買い物アイテムを格納するステート
-  const [shopItmes, setShopItems] = useState([
+  const [shopItems, setShopItems] = useState([
     "item 1",
     "item 2",
     "item 3",
@@ -28,18 +28,13 @@ function App() {
           <hr />
           <div className="shopping-items">
             <ul>
-              <div className="item-row">
-                <li>item 1</li>
-              </div>
-              <div className="item-row">
-                <li>item 1</li>
-              </div>
-              <div className="item-row">
-                <li>item 2</li>
-              </div>
-              <div className="item-row">
-                <li>item 3</li>
-              </div>
+              {shopItems.map((item) => {
+                return(
+                <div key={item} className="item-row">
+                  <li>{item}</li>
+                </div>
+                )
+              })}
             </ul>
             <p>total:3</p>
           </div>
