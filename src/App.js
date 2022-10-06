@@ -13,9 +13,16 @@ function App() {
     {itemName:"item 4", quantity: 3},
   ]);
 
+  // アイテム追加の処理
   // const addShopItem = () => {
  
   // }
+
+  // アイテム削除の処理
+  // const deleteShopItem = () = {}
+
+  // アイテムの合計の計算
+  // const quantity_total = () => {}
 
   return (
     <div className="App">
