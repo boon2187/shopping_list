@@ -14,7 +14,7 @@ function App() {
   ]);
 
   // inputに入力されたらそれをitemTextステートにわたす
-  const onChangeInputText = (e) => setInputText(e.target.value);
+  // const onChangeInputText = (e) => setInputText(e.target.value);
   
   // アイテム追加の処理
   // const addShopItem = () => {
@@ -33,11 +33,13 @@ function App() {
         <div className="shopping-list">
           <div className="input-area">
             <input 
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
               type="text" 
               placeholder="追加アイテム" 
-              value={inputText}
-              onChange={onChangeInputText}></input>
+              ></input>
             <button>+</button>
+            {inputText}
           </div>
           <hr />
           <div className="shopping-items">
