@@ -4,7 +4,7 @@ import Item from './compontents/Item';
 
 function App() {
   // Inputに渡された値を収納するステート
-  // const [value, setValue] = useState("");
+  const [itemText, setItemText] = useState("");
   // 買い物アイテムを格納するステート
   const [shopItems, setShopItems] = useState([
     {itemName:"item 1", quantity: 2},
@@ -12,6 +12,13 @@ function App() {
     {itemName:"item 3", quantity: 4},
     {itemName:"item 4", quantity: 3},
   ]);
+
+  // inputに入力されたらそれをitemTextステートにわたす
+  const onChangeItemText = async (e) => {
+    // console.log(e.target.value);
+    await setItemText(e.target.value);
+    console.log(itemText);
+  }
 
   // アイテム追加の処理
   // const addShopItem = () => {
@@ -29,7 +36,11 @@ function App() {
       <div className="container" >
         <div className="shopping-list">
           <div className="input-area">
-            <input type="text" placeholder="追加アイテム" ></input>
+            <input 
+              type="text" 
+              placeholder="追加アイテム" 
+              value={itemText}
+              onChange={onChangeItemText}></input>
             <button>+</button>
           </div>
           <hr />
