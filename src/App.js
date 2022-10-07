@@ -13,7 +13,7 @@ function App() {
     {itemName:"item 4", quantity: 3},
   ]);
 
-  // inputに入力されたらそれをitemTextステートにわたす
+  // inputに入力されたらそれをitemTextステートにわたす→冗長なのでなくした。
   // const onChangeInputText = (e) => setInputText(e.target.value);
   
   // アイテム追加の処理
@@ -39,7 +39,6 @@ function App() {
               placeholder="追加アイテム" 
               ></input>
             <button>+</button>
-            {inputText}
           </div>
           <hr />
           <div className="shopping-items">
