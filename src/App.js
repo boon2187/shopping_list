@@ -18,7 +18,13 @@ function App() {
   // アイテム数のトータルの計算をuseStateで実装
   useEffect(() => {
     const totalQuantity = () => {
-      shopItems.map()
+      let currentTotal = itemTotal;
+      console.log(currentTotal);
+      shopItems.map((item, i) => {
+        currentTotal = currentTotal + item.quantity;
+        console.log("計算後のcurrentTotal", currentTotal);
+      });
+      setItemTotal(currentTotal);
     };
     totalQuantity();
   }, []);
@@ -62,7 +68,7 @@ function App() {
                 )
               })}
             </ul>
-            <p>total:3</p>
+            <p>total:{itemTotal}</p>
           </div>
         </div>
       </div>
