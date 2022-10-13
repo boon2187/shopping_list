@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Item from './compontents/Item';
 
@@ -12,6 +12,16 @@ function App() {
     {itemName:"item 3", quantity: 4},
     {itemName:"item 4", quantity: 3},
   ]);
+  // アイテムのトータル数を収納するステート
+  const [itemTotal, setItemTotal] = useState(0);
+
+  // アイテム数のトータルの計算をuseStateで実装
+  useEffect(() => {
+    const totalQuantity = () => {
+      shopItems.map()
+    };
+    totalQuantity();
+  }, []);
 
   // inputに入力されたらそれをitemTextステートにわたす→冗長なのでなくした。
   // const onChangeInputText = (e) => setInputText(e.target.value);
@@ -27,9 +37,6 @@ function App() {
 
   // アイテム削除の処理
   // const deleteShopItem = () = {}
-
-  // アイテムの合計の計算
-  // const quantity_total = () => {}
 
   return (
     <div className="App">
