@@ -17,9 +17,13 @@ function App() {
   // const onChangeInputText = (e) => setInputText(e.target.value);
   
   // アイテム追加の処理
-  // const addShopItem = () => {
- 
-  // }
+  const addShopItem = () => {
+    if (inputText === "") return;
+    const newShopItem = {itemName: inputText, quantity:1}
+    const newShopItems = [...shopItems, newShopItem];
+    setShopItems(newShopItems);
+    setInputText("");
+  }
 
   // アイテム削除の処理
   // const deleteShopItem = () = {}
@@ -38,7 +42,7 @@ function App() {
               type="text" 
               placeholder="追加アイテム" 
               ></input>
-            <button>+</button>
+            <button onClick={addShopItem}>+</button>
           </div>
           <hr />
           <div className="shopping-items">
