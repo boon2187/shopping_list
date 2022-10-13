@@ -15,19 +15,7 @@ function App() {
   // アイテムのトータル数を収納するステート
   const [itemTotal, setItemTotal] = useState(0);
 
-  // アイテム数のトータルの計算をuseStateで実装
-  useEffect(() => {
-    const totalQuantity = () => {
-      let currentTotal = itemTotal;
-      console.log(currentTotal);
-      shopItems.map((item, i) => {
-        currentTotal = currentTotal + item.quantity;
-        console.log("計算後のcurrentTotal", currentTotal);
-      });
-      setItemTotal(currentTotal);
-    };
-    totalQuantity();
-  }, []);
+  
 
   // inputに入力されたらそれをitemTextステートにわたす→冗長なのでなくした。
   // const onChangeInputText = (e) => setInputText(e.target.value);
@@ -43,6 +31,22 @@ function App() {
 
   // アイテム削除の処理
   // const deleteShopItem = () = {}
+
+  // アイテムのトータル数の計算
+  const totalQuantity = () => {
+    let currentTotal = 0;
+    shopItems.map((item) => {
+      currentTotal = currentTotal + item.quantity;
+    });
+    setItemTotal(currentTotal);
+  };
+
+// アイテム数のトータルの計算をuseStateで実装
+// shopItemsに変更があった時
+useEffect(() => {
+  totalQuantity();
+}, [shopItems]);
+
 
   return (
     <div className="App">
