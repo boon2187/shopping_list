@@ -68,7 +68,6 @@ useEffect(() => {
                 return(
                 <div key={i} className="item-row">
                   <li><Item itemName={item.itemName} quantity={item.quantity} /></li>
-                  <button>削除</button>
                 </div>
                 )
               })}

@@ -1,10 +1,15 @@
 import React from 'react'
+import "./item.css"
 
 const Item = ({quantity, itemName}) => {
   // const {itemName, quantity} = props;
 
   return (
-    <div>{itemName}  {quantity}</div>
+    <div className='item-component-item'>
+      <p>{itemName}</p>
+      <p>{quantity}</p>
+      <button>削除</button>
+    </div>
   )
 }
 
