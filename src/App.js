@@ -30,7 +30,11 @@ function App() {
   }
 
   // アイテム削除の処理
-  // const deleteShopItem = () = {}
+  const deleteShopItem = (index) => {
+    const newShopItems = [... shopItems];
+    newShopItems.splice(index, 1);
+    setShopItems(newShopItems);
+  }
 
   // アイテムのトータル数の計算
   const totalQuantity = () => {
@@ -64,10 +68,17 @@ useEffect(() => {
           <hr />
           <div className="shopping-items">
             <ul>
-              {shopItems.map((item, i) => {
+              {shopItems.map((item, index) => {
                 return(
-                <div key={i} className="item-row">
-                  <li><Item itemName={item.itemName} quantity={item.quantity} /></li>
+                <div key={index} className="item-row">
+                  <li>
+                    <Item 
+                      itemName={item.itemName} 
+                      quantity={item.quantity} 
+                      deleteShopItem={deleteShopItem}
+                      index = {index}
+                    />
+                  </li>
                 </div>
                 )
               })}
