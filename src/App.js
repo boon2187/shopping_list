@@ -1,42 +1,78 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css'
 import Item from './compontents/Item';
 
 function App() {
   // Inputに渡された値を収納するステート
-  // const [value, setValue] = useState("");
+  const [inputText, setInputText] = useState("");
   // 買い物アイテムを格納するステート
-  // const [shopItmes, setShopItems] = useState([]);
+  const [shopItems, setShopItems] = useState([
+    {itemName:"item 1", quantity: 2},
+    {itemName:"item 2", quantity: 1},
+    {itemName:"item 3", quantity: 4},
+    {itemName:"item 4", quantity: 3},
+  ]);
+  // アイテムのトータル数を収納するステート
+  const [itemTotal, setItemTotal] = useState(0);
 
-  // const addShopItem = () => {
- 
-  // }
+  
+
+  // inputに入力されたらそれをitemTextステートにわたす→冗長なのでなくした。
+  // const onChangeInputText = (e) => setInputText(e.target.value);
+  
+  // アイテム追加の処理
+  const addShopItem = () => {
+    if (inputText === "") return;
+    const newShopItem = {itemName: inputText, quantity:1}
+    const newShopItems = [...shopItems, newShopItem];
+    setShopItems(newShopItems);
+    setInputText("");
+  }
+
+  // アイテム削除の処理
+  // const deleteShopItem = () = {}
+
+  // アイテムのトータル数の計算
+  const totalQuantity = () => {
+    let currentTotal = 0;
+    shopItems.map((item) => {
+      currentTotal = currentTotal + item.quantity;
+    });
+    setItemTotal(currentTotal);
+  };
+
+// アイテム数のトータルの計算をuseStateで実装
+// shopItemsに変更があった時
+useEffect(() => {
+  totalQuantity();
+}, [shopItems]);
+
 
   return (
     <div className="App">
       <div className="container" >
         <div className="shopping-list">
           <div className="input-area">
-            <input type="text" placeholder="追加アイテム" ></input>
-            <button>+</button>
+            <input 
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              type="text" 
+              placeholder="追加アイテム" 
+              ></input>
+            <button onClick={addShopItem}>+</button>
           </div>
           <hr />
           <div className="shopping-items">
             <ul>
-              <div className="item-row">
-                <li>item 1</li>
-              </div>
-              <div className="item-row">
-                <li>item 1</li>
-              </div>
-              <div className="item-row">
-                <li>item 2</li>
-              </div>
-              <div className="item-row">
-                <li>item 3</li>
-              </div>
+              {shopItems.map((item, i) => {
+                return(
+                <div key={i} className="item-row">
+                  <li><Item itemName={item.itemName} quantity={item.quantity} /></li>
+                </div>
+                )
+              })}
             </ul>
-            <p>total:3</p>
+            <p>total:{itemTotal}</p>
           </div>
         </div>
       </div>
