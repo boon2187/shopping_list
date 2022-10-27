@@ -31,7 +31,7 @@ function App() {
 
   // アイテム削除の処理
   const deleteShopItem = (index) => {
-    const newShopItems = [... shopItems];
+    const newShopItems = [...shopItems];
     newShopItems.splice(index, 1);
     setShopItems(newShopItems);
   }
@@ -48,7 +48,7 @@ function App() {
   // +ボタンで増加
   const increaseQuantity = (index) => {
     console.log("+が押されたよ")
-    const newShopItems =  [... shopItems];
+    const newShopItems =  [...shopItems];
     newShopItems[index].quantity++;
     setShopItems(newShopItems);
   }
@@ -56,7 +56,7 @@ function App() {
   //　-ボタンで減少
   const decreaseQuantity = (index) => {
     console.log("-が押されたよ")
-    const newShopItems =  [... shopItems];
+    const newShopItems =  [...shopItems];
     newShopItems[index].quantity--;
     if (newShopItems[index].quantity < 0) {
       newShopItems[index].quantity = 0;
