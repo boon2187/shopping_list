@@ -56,6 +56,9 @@ function App() {
   //　-ボタンで減少
   const decreaseQuantity = (index) => {
     console.log("-が押されたよ")
+    const newShopItems =  [... shopItems];
+    newShopItems[index].quantity--;
+    setShopItems(newShopItems);
   }
 
 
