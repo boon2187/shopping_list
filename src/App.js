@@ -45,6 +45,21 @@ function App() {
     setItemTotal(currentTotal);
   };
 
+  // +ボタンで増加
+  const increaseQuantity = (index) => {
+    console.log("+が押されたよ")
+    const newShopItems =  [... shopItems];
+    newShopItems[index].quantity++;
+    setShopItems(newShopItems);
+  }
+
+  //　-ボタンで減少
+  const decreaseQuantity = (index) => {
+    console.log("-が押されたよ")
+  }
+
+
+
 // アイテム数のトータルの計算をuseStateで実装
 // shopItemsに変更があった時
 useEffect(() => {
@@ -77,6 +92,8 @@ useEffect(() => {
                       quantity={item.quantity} 
                       deleteShopItem={deleteShopItem}
                       index = {index}
+                      increaseQuantity ={increaseQuantity}
+                      decreaseQuantity = {decreaseQuantity}
                     />
                   </li>
                 </div>
