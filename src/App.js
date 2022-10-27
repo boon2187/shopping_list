@@ -58,7 +58,12 @@ function App() {
     console.log("-が押されたよ")
     const newShopItems =  [... shopItems];
     newShopItems[index].quantity--;
-    setShopItems(newShopItems);
+    if (newShopItems[index].quantity === 0) {
+      deleteShopItem(index);
+      return 0;
+    }else{
+      setShopItems(newShopItems);
+    }
   }
 
 
