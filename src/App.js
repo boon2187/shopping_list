@@ -88,7 +88,6 @@ useEffect(() => {
               ></input>
             <button onClick={addShopItem}>+</button>
           </div>
-          <hr />
           <div className="shopping-items">
             <ul>
               {shopItems.map((item, index) => {
@@ -108,6 +107,7 @@ useEffect(() => {
                 )
               })}
             </ul>
+            <hr className="divider" />
             <p>total:{itemTotal}</p>
           </div>
         </div>

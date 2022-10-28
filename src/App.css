@@ -8,7 +8,8 @@
   background-color: #ED645C;
   color: white;
   margin: auto;
-  width: 300px;
+  width: auto;
+  max-width: 550px;
   padding:30px 0;
   border-radius: 6px;
   display: flex;
@@ -24,18 +25,42 @@
 }
 
 .input-area {
-  /* background-color: rgb(27, 233, 37); */
-  padding: 10px;
+  background-color: #FFBFB1;
+  border-radius: 3px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3px;
 }
 
 .input-area input {
+  background-color: #FFBFB1;
+  color: #ED645C;
   width: 75%;
   padding: 5px;
   margin-right: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.input-area input:focus {
+  outline: none;
+}
+
+.input-area input::placeholder {
+  color: #ED645C;
 }
 
 .input-area button {
-  padding: 5px;
+  background-color: #FFBFB1;
+  color: #ED645C;
+  padding: 0;
+  border: none;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.divider {
+  width: 100%;
 }
 
 .shopping-items {
