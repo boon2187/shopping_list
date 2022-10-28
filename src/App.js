@@ -107,7 +107,9 @@ useEffect(() => {
                 )
               })}
             </ul>
-            <hr className="divider" />
+          </div>
+          <hr className="divider" />
+          <div className="total-area">
             <p>total:{itemTotal}</p>
           </div>
         </div>

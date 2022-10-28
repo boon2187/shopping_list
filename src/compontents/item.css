@@ -1,3 +1,41 @@
 .item-component-item {
     display: flex;
+    margin: 6px 0;
+    font-weight: bold;
+}
+
+.item-component-item li{
+    width: 100%;
+}
+
+.item-component-item .item-name {
+    flex-grow: 1;
+}
+
+.item-quantities {
+    display: flex;
+    background-color: white;
+    color: #ED645C;
+    border-radius: 50vh;
+    margin: 0 5px;
+}
+
+.item-quantities button {
+    background: transparent;
+    color: #ED645C;
+    border-radius: 50vh;
+    border: none;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.item-delete-button {
+    background: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: none;
+    font-weight: bold;
+    margin: auto 2px;
+    cursor: pointer;
 }

@@ -6,11 +6,13 @@ const Item = (props) => {
 
   return (
     <div className='item-component-item'>
-      <p>{itemName}</p>
-      <button onClick={() => decreaseQuantity(index)}>{"<"}</button>
-      <p>{quantity}</p>
-      <button onClick={() => increaseQuantity(index)}>{">"}</button>
-      <button onClick={() => deleteShopItem(index)}>削除</button>
+      <button className='item-delete-button' onClick={() => deleteShopItem(index)}></button>
+      <p className='item-name'>{itemName}</p>
+      <div className='item-quantities'>
+        <button onClick={() => decreaseQuantity(index)}>－</button>
+        <p>{quantity}</p>
+        <button onClick={() => increaseQuantity(index)}>＋</button>
+      </div>
     </div>
   )
 }

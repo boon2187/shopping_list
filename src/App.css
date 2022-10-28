@@ -79,11 +79,17 @@
 }
 
 .shopping-items p {
-  padding: 8px;
+  padding: 2px;
   margin: 0;
-  text-align: right;
+  text-align: left;
 }
 
 .item-row {
   margin: 5px 0;
+}
+
+.total-area {
+  text-align: right;
+  font-weight: bold;
+  margin-right: 27px;
 }
